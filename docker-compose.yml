@@ -1,0 +1,15 @@
+version: "3"
+
+services: 
+  tileserver-gl:
+    container_name: Tileserver-GL
+    image: maptiler/tileserver-gl
+    ports: 
+      - 8080:80
+    volumes:
+      - ./data:/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
